@@ -1,0 +1,20 @@
+{
+  "name": "Genticore",
+  "short_name": "Genticore",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#15181C",
+  "theme_color": "#15181C",
+  "icons": [
+    {
+      "src": "/favicons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
