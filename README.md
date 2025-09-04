@@ -1,5 +1,5 @@
 
-# Genticore Website
+
 # Genticore Website
 
 A minimalist, professional portfolio and freelance business website for **Geovany Cardoza**.  
@@ -7,7 +7,7 @@ Built to showcase IT support, full-stack web development, and adaptive problem-s
 
 ---
 
-## íº€ Features
+##  Features
 - Clean, responsive design (HTML5, Pico.css)  
 - Optimized for performance and accessibility  
 - Full favicon + manifest setup for PWA and SEO  
@@ -16,7 +16,7 @@ Built to showcase IT support, full-stack web development, and adaptive problem-s
 
 ---
 
-## í³‚ Project Structure
+##  Project Structure
 
 genticore-website/
 â”œâ”€â”€ index.html # Main entry point
@@ -31,7 +31,7 @@ genticore-website/
 
 ---
 
-## í´§ Usage
+##  Usage
 1. Clone the repo:
    ```bash
    git clone git@github.com:Geovany87/genticore-website.git
@@ -42,13 +42,13 @@ Open index.html in your browser.
 
 Deploy to your host (Netlify, Vercel, or GitHub Pages).
 
-í·© Tech Stack
+ Tech Stack
 
 HTML5 + CSS3 (with Pico.css for styling)
 
 Git/GitHub for version control
 
-í³œ License
+ License
 
 This project is licensed under the MIT License â€” see the LICENSE
  file for details.
