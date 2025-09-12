@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600&display=swap');
+@import './variables.css';
+
+/* Reset and global base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+a {
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive containers */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero background */
+.hero {
+  background: var(--gradient-hero);
+  color: var(--color-white);
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* About background */
+.about {
+  background: var(--gradient-about);
+  color: var(--color-white);
+  padding: 60px 20px;
+}
+
+/* Contact background */
+.contact {
+  background: var(--gradient-contact);
+  color: var(--color-dark);
+  padding: 60px 20px;
+}
