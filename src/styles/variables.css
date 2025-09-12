@@ -1,0 +1,22 @@
+/* Design tokens based on Genticore brand palette */
+
+:root {
+  /* Primary branding */
+  --color-primary: #1A237E; /* Deep Navy Blue */
+  --color-secondary: #00BCD4; /* Cyan accent */
+  --color-accent: #FFC107; /* Amber highlight */
+
+  /* Neutral shades */
+  --color-white: #ffffff;
+  --color-light: #f5f5f5;
+  --color-dark: #212121;
+
+  /* Gradients */
+  --gradient-hero: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  --gradient-about: linear-gradient(135deg, var(--color-dark), var(--color-primary));
+  --gradient-contact: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+
+  /* Typography */
+  --font-main: 'Inter', sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+}
