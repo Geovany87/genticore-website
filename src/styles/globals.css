@@ -1,60 +1,110 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600&display=swap');
-@import './variables.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap');
 
-/* Reset and global base styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-main);
-  background-color: var(--color-light);
-  color: var(--color-dark);
+  color: var(--color-text-dark);
+  background-color: var(--color-white);
   line-height: 1.6;
+  font-size: 16px;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 600;
-  color: var(--color-primary);
+  color: var(--color-navy);
+  margin-bottom: var(--spacing-sm);
 }
 
 a {
-  color: var(--color-secondary);
+  color: inherit;
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-sm);
 }
 
-/* Responsive containers */
+/* ===== Layout Containers ===== */
 .container {
-  width: 90%;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 var(--spacing-sm);
 }
 
-/* Hero background */
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: var(--color-navy);
+  color: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease-in-out;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: #13294b;
+  box-shadow: var(--shadow-lg);
+}
+
+/* ===== Sections ===== */
+section {
+  padding: var(--spacing-lg) 0;
+}
+
+.section-dark {
+  background: var(--color-navy);
+  color: var(--color-white);
+}
+
+.section-light {
+  background: var(--color-light-gray);
+  color: var(--color-text-dark);
+}
+
+/* ===== Hero Backgrounds (mobile-first) ===== */
 .hero {
   background: var(--gradient-hero);
   color: var(--color-white);
-  padding: 80px 20px;
   text-align: center;
+  padding: var(--spacing-lg) var(--spacing-sm);
 }
 
-/* About background */
-.about {
-  background: var(--gradient-about);
-  color: var(--color-white);
-  padding: 60px 20px;
+.hero h1 {
+  font-size: 2rem;
 }
 
-/* Contact background */
-.contact {
-  background: var(--gradient-contact);
-  color: var(--color-dark);
-  padding: 60px 20px;
+.hero p {
+  font-size: 1.125rem;
+  margin-top: var(--spacing-sm);
+}
+
+/* ===== Responsive Typography ===== */
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+  .hero h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero h1 {
+    font-size: 3.5rem;
+  }
 }
