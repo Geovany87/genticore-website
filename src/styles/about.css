@@ -1,54 +1,63 @@
-@import "./variables.css";
-
-/* About Section */
 .about {
-  background: var(--color-bg);
+  padding: var(--spacing-xl) var(--spacing-md);
+  background: var(--color-background);
   color: var(--color-text);
-  padding: var(--spacing-xl) 0;
 }
 
-.about__content {
-  max-width: 800px;
-  margin: 0 auto;
+.about .section-title {
   text-align: center;
-}
-
-.section-title {
-  font-size: var(--fs-2xl);
-  margin-bottom: var(--spacing-md);
-}
-
-.about__text {
-  font-size: var(--fs-md);
-  line-height: var(--lh-relaxed);
   margin-bottom: var(--spacing-lg);
+  font-size: var(--font-size-xl);
+  color: var(--color-primary);
 }
 
-.about__skills {
-  list-style: none;
-  padding: 0;
+.about_content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-sm);
-  text-align: left;
-  max-width: 600px;
-  margin: 0 auto;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
 }
 
-.about__skills li {
+.about_text p {
+  line-height: 1.6;
+  font-size: var(--font-size-md);
+  color: var(--color-text);
+}
+
+/* Skills block */
+.about_skills {
   background: var(--color-surface);
-  padding: var(--spacing-sm);
+  padding: var(--spacing-md);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
 }
 
-/* Responsive */
-@media (min-width: 768px) {
-  .about__content {
-    text-align: left;
-  }
+.about_skills h3 {
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-lg);
+  color: var(--color-secondary);
+}
 
-  .about__skills {
-    grid-template-columns: repeat(2, 1fr);
+.about_skills ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-sm);
+}
+
+.about_skills li {
+  background: var(--color-surface);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-xs);
+  font-size: var(--font-size-sm);
+}
+
+/* ✅ Responsive */
+@media (min-width: 768px) {
+  .about_content {
+    grid-template-columns: 2fr 1fr;
+    align-items: start;
   }
 }
