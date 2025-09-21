@@ -1,36 +1,36 @@
 import React from "react";
 import "../styles/services.css";
 
-function Services() {
+const Services = () => {
   const services = [
     {
-      title: "IT Support & Hardware Repair",
+      title: "IT Support",
       description:
-        "PC building, OS installation, troubleshooting, and end-to-end IT support with documentation-driven workflows.",
+        "Troubleshooting, hardware repair, and system optimization for individuals and small businesses.",
+      icon: "🛠️",
+    },
+    {
+      title: "Full Stack Development",
+      description:
+        "Building scalable web applications using the MERN stack (MongoDB, Express, React, Node.js).",
       icon: "💻",
     },
     {
-      title: "Full Stack Web Development",
+      title: "Automation & Optimization",
       description:
-        "Modern, responsive websites and apps built with the MERN stack (MongoDB, Express, React, Node.js).",
-      icon: "🌐",
-    },
-    {
-      title: "Automation & Technical Solutions",
-      description:
-        "Streamlined business processes with automation, Dockerized apps, and AI-assisted workflows.",
+        "Streamlining workflows with Docker, virtualization, and automation scripts.",
       icon: "⚡",
     },
   ];
 
   return (
-    <section className="services" id="services">
-      <div className="services-container">
-        <h2>My Services</h2>
-        <div className="services-grid">
+    <section id="services" className="services">
+      <div className="container">
+        <h2>Services</h2>
+        <div className="services__grid">
           {services.map((service, index) => (
-            <div className="service-card" key={index}>
-              <div className="service-icon">{service.icon}</div>
+            <div className="service__card" key={index}>
+              <div className="service__icon">{service.icon}</div>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
             </div>
@@ -39,6 +39,6 @@ function Services() {
       </div>
     </section>
   );
-}
+};
 
 export default Services;
