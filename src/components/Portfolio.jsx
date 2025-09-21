@@ -1,56 +1,48 @@
 import React from "react";
 import "../styles/portfolio.css";
 
-function Portfolio() {
+const Portfolio = () => {
   const projects = [
     {
-      title: "Business IT Support",
+      title: "Project One",
       description:
-        "Configured networks and optimized systems for a small business in Philadelphia, ensuring operational continuity.",
-      link: "#",
-      thumbnail: "/src/assets/images/projects/it-support.png",
+        "Full-stack MERN application showcasing API integration and authentication.",
+      status: "Completed",
     },
     {
-      title: "E-commerce Store (MERN)",
+      title: "Project Two",
       description:
-        "Developed a full-stack e-commerce site with secure checkout and responsive design.",
-      link: "#",
-      thumbnail: "/src/assets/images/projects/ecommerce.png",
+        "Responsive IT support landing page built with React and styled-components.",
+      status: "Completed",
     },
     {
-      title: "Automation Scripts",
-      description:
-        "Created Dockerized automation scripts for client operations, reducing manual workload by 40%.",
-      link: "#",
-      thumbnail: "/src/assets/images/projects/automation.png",
+      title: "Upcoming Project",
+      description: "🚧 This project is currently in development. Stay tuned!",
+      status: "In Development",
     },
   ];
 
   return (
-    <section className="portfolio" id="portfolio">
-      <div className="portfolio-container">
-        <h2>My Work</h2>
-        <div className="portfolio-grid">
+    <section id="portfolio" className="portfolio">
+      <div className="container">
+        <h2>Portfolio</h2>
+        <div className="portfolio__grid">
           {projects.map((project, index) => (
-            <div className="portfolio-card" key={index}>
-              <img
-                src={project.thumbnail}
-                alt={project.title}
-                className="portfolio-thumbnail"
-              />
-              <div className="portfolio-content">
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <a href={project.link} className="portfolio-btn">
-                  View Project
-                </a>
+            <div className="portfolio__card" key={index}>
+              <div className="portfolio__placeholder">
+                {project.status === "In Development" ? "🚧" : "📂"}
               </div>
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              {project.status === "In Development" && (
+                <span className="portfolio__badge">In Development</span>
+              )}
             </div>
           ))}
         </div>
       </div>
     </section>
   );
-}
+};
 
 export default Portfolio;
