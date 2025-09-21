@@ -1,60 +1,103 @@
-/* Contact Section */
-
+/* ---------------- Contact Section ---------------- */
 .contact {
-  padding: 4rem 2rem;
-  background: var(--color-light);
-  color: var(--color-dark);
-}
-
-.contact-container {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-md);
+  background: var(--color-background);
+  color: var(--color-text);
 }
 
 .contact h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
   color: var(--color-primary);
 }
 
-.contact p {
-  margin-bottom: 2rem;
-  font-size: 1.1rem;
+.contact__intro {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  font-size: 1rem;
+  color: var(--color-text-light);
 }
 
-.contact a {
-  color: var(--color-accent);
-  text-decoration: none;
-  font-weight: 600;
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
 }
 
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
+.contact__info h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-primary);
 }
 
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 0.9rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+.contact__info ul {
+  list-style: none;
+  padding: 0;
   font-size: 1rem;
 }
 
-.contact-btn {
-  background: var(--color-accent);
-  color: #fff;
-  font-weight: 600;
-  padding: 0.9rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease;
+.contact__info li {
+  margin-bottom: var(--spacing-sm);
 }
 
-.contact-btn:hover {
+.contact__info a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.contact__info a:hover {
+  text-decoration: underline;
+}
+
+/* Contact Form */
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.contact__form label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.contact__form input,
+.contact__form textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.contact__form input:focus,
+.contact__form textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.2);
+}
+
+.contact__form .btn {
   background: var(--color-primary);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.contact__form .btn:hover {
+  background: var(--color-accent);
+}
+
+/* ---------------- Responsive Layout ---------------- */
+@media (min-width: 768px) {
+  .contact__grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
 }
