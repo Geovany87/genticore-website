@@ -1,29 +1,37 @@
 import React from "react";
 import "../styles/about.css";
-import profileImage from "../assets/images/profile/profile.jpg";
+import profileImg from "../assets/images/profile/profile.jpg";
 
-function About() {
+const About = () => {
   return (
-    <section className="about" id="about">
-      <div className="about-container">
-        <div className="about-image">
-          <img src={profileImage} alt="Geovany Cardoza - Genticore" />
+    <section id="about" className="about">
+      <div className="container about__container">
+        {/* Profile Image */}
+        <div className="about__image">
+          <img src={profileImg} alt="Profile - Genticore Freelancer" />
         </div>
-        <div className="about-text">
+
+        {/* About Content */}
+        <div className="about__content">
           <h2>About Me</h2>
           <p>
-            Hi, I’m <strong>Geovany Cardoza</strong>, a freelance IT Support
-            specialist and full stack developer. With a foundation in hardware
-            repair, CompTIA A+ certification, and full stack development
-            training at Penn LPS, I help businesses solve technical problems
-            and build scalable digital solutions. I thrive on documentation-driven
-            execution and adaptive problem-solving.
+            I’m <strong>Geovany Cardoza</strong>, a resourceful technology
+            professional with a foundation in hardware repair, IT support, and
+            full stack web development. CompTIA A+ certified and trained at the
+            University of Pennsylvania’s LPS Coding Boot Camp, I specialize in
+            adaptive problem-solving and delivering scalable solutions for
+            businesses and individuals.
           </p>
-          <a href="#portfolio" className="btn-primary">View My Work</a>
+          <ul className="about__highlights">
+            <li>💻 Full Stack MERN Development</li>
+            <li>🔧 IT Support & System Optimization</li>
+            <li>⚡ Docker & Virtualization</li>
+            <li>📚 Documentation-driven execution</li>
+          </ul>
         </div>
       </div>
     </section>
   );
-}
+};
 
 export default About;
