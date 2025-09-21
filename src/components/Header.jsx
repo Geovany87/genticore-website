@@ -1,40 +1,41 @@
 import React, { useState } from "react";
 import "../styles/header.css";
-import logo from "../assets/logos/logo-primary.svg";
 
-function Header() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <header className="header">
-      <div className="container nav-container">
+      <div className="container header__container">
         {/* Logo */}
-        <a href="#hero" className="logo">
-          <img src={logo} alt="Genticore Logo" />
-        </a>
+        <div className="header__logo">
+          <a href="#hero">Genticore</a>
+        </div>
 
-        {/* Hamburger menu for mobile */}
-        <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle Menu">
-          ☰
-        </button>
-
-        {/* Navigation Links */}
-        <nav className={`nav ${isOpen ? "open" : ""}`}>
+        {/* Desktop Navigation */}
+        <nav className={`header__nav ${menuOpen ? "active" : ""}`}>
           <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#hero" onClick={() => setMenuOpen(false)}>Home</a></li>
+            <li><a href="#about" onClick={() => setMenuOpen(false)}>About</a></li>
+            <li><a href="#services" onClick={() => setMenuOpen(false)}>Services</a></li>
+            <li><a href="#portfolio" onClick={() => setMenuOpen(false)}>Portfolio</a></li>
+            <li><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></li>
           </ul>
         </nav>
+
+        {/* Mobile Menu Toggle */}
+        <button
+          className={`header__toggle ${menuOpen ? "open" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </button>
       </div>
     </header>
   );
-}
+};
 
 export default Header;

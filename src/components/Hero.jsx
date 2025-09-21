@@ -1,16 +1,28 @@
 import React from "react";
 import "../styles/hero.css";
 
-function Hero() {
+const Hero = () => {
   return (
-    <section className="hero">
-      <div className="hero-content">
-        <h1>Welcome to Genticore</h1>
-        <p>Freelance IT Support & Full Stack Development</p>
-        <a href="#contact" className="btn-primary">Get in Touch</a>
+    <section id="hero" className="hero">
+      <div className="hero__overlay">
+        <div className="container hero__content">
+          <h1 className="hero__title">Welcome to Genticore</h1>
+          <p className="hero__subtitle">
+            Building modern digital solutions with precision, innovation, and
+            impact.
+          </p>
+          <div className="hero__actions">
+            <a href="#services" className="btn btn-primary">
+              Explore Services
+            </a>
+            <a href="#contact" className="btn btn-outline">
+              Contact Us
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );
-}
+};
 
 export default Hero;
