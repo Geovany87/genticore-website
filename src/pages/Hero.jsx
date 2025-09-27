@@ -1,23 +1,18 @@
+// src/pages/Hero.jsx
 import React from "react";
 import "../styles/hero.css";
 
 function Hero() {
   return (
     <section id="hero" className="hero">
-      <div className="hero_container">
-        <h1 className="hero_title">Building Digital Experiences</h1>
-        <p className="hero_subtitle">
-          At <strong>Genticore</strong>, we create modern web solutions that
-          empower your business to grow.
+      <div className="hero-content">
+        <h1>Hi, I’m Geovany 👋</h1>
+        <p>
+          Freelance IT Support & Full Stack Developer.  
+          I help businesses and individuals solve technical challenges with 
+          scalable, professional, and modern solutions.
         </p>
-        <div className="hero_buttons">
-          <a href="#services" className="btn btn-primary">
-            Explore Services
-          </a>
-          <a href="#contact" className="btn btn-outline">
-            Get in Touch
-          </a>
-        </div>
+        <a href="#contact" className="btn-primary">Let’s Work Together</a>
       </div>
     </section>
   );
