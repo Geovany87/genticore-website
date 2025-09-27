@@ -1,11 +1,13 @@
+// src/App.jsx
 import React from "react";
 import Header from "./components/Header";
-import Hero from "../components/Hero";
-import About from "./components/About";
-import Services from "./pages/Services";
-import Portfolio from "./components/Portfolio";
-import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Hero from "./pages/Hero";
+import About from "./pages/About";
+import Services from "./pages/Services";
+import Portfolio from "./pages/Portfolio";
+import Contact from "./pages/Contact";
+import "./styles/global.css"; // ensure global styles are included
 
 function App() {
   return (
