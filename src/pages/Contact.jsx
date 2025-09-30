@@ -1,33 +1,70 @@
-import React from "react";
+// src/pages/Contact.jsx
+import React, { useState } from "react";
 import "../styles/contact.css";
 
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    alert("Thank you for reaching out! I will get back to you soon.");
+    setFormData({ name: "", email: "", message: "" });
+  };
+
   return (
     <section id="contact" className="contact">
-      <div className="contact_container">
-        <h2 className="section_title">Contact Me</h2>
-        <p className="section_subtitle">
-          Interested in working together? Reach out and let’s build something amazing.
-        </p>
-
-        <div className="contact_grid">
-          {/* Contact Info */}
-          <div className="contact_info">
-            <p><strong>Email:</strong> <a href="mailto:geovany@genticore.com">geovany@genticore.com</a></p>
-            <p><strong>Location:</strong> Philadelphia, PA, USA</p>
-            <p><strong>GitHub:</strong> <a href="https://github.com/Geovany87" target="_blank" rel="noopener noreferrer">github.com/Geovany87</a></p>
-            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/geovanycardoza" target="_blank" rel="noopener noreferrer">linkedin.com/in/geovanycardoza</a></p>
-          </div>
-
-          {/* Contact Form */}
-          <form className="contact_form">
-            <input type="text" name="name" placeholder="Your Name" required />
-            <input type="email" name="email" placeholder="Your Email" required />
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-          </form>
+      <h2>Contact Me</h2>
+      <form className="contact-form" onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
         </div>
-      </div>
+
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <button type="submit" className="btn-submit">
+          Send Message
+        </button>
+      </form>
     </section>
   );
 }
