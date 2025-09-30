@@ -1,42 +1,43 @@
+// src/pages/Services.jsx
 import React from "react";
 import "../styles/services.css";
+import ecommerceImg from "../assets/images/services/services-ecommerce.png";
+import consultingImg from "../assets/images/services/services-consulting.png";
+import saasImg from "../assets/images/services/services-saas-startup.png";
 
 function Services() {
   const services = [
     {
-      title: "Web Development",
+      title: "E-Commerce Solutions",
       description:
-        "Full-stack web applications built with the MERN stack. Clean, scalable, and optimized for performance.",
+        "Custom-built online stores with secure payments, scalable design, and smooth user experience.",
+      image: ecommerceImg,
     },
     {
-      title: "UI/UX Design",
+      title: "IT Consulting",
       description:
-        "Responsive, user-centered designs that provide an engaging experience across all devices.",
+        "Professional consulting to optimize your IT infrastructure, improve workflows, and reduce costs.",
+      image: consultingImg,
     },
     {
-      title: "API Integration",
+      title: "SaaS Development",
       description:
-        "Secure and efficient REST & GraphQL APIs integration for dynamic data-driven applications.",
-    },
-    {
-      title: "Consulting",
-      description:
-        "Technical consulting to help optimize workflows, improve scalability, and adopt modern web practices.",
+        "Scalable SaaS platforms tailored to your business needs with modern cloud technologies.",
+      image: saasImg,
     },
   ];
 
   return (
     <section id="services" className="services">
-      <div className="services_container">
-        <h2 className="section_title">Services</h2>
-        <div className="services_grid">
-          {services.map((service, index) => (
-            <div key={index} className="service_card">
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-            </div>
-          ))}
-        </div>
+      <h2>My Services</h2>
+      <div className="services-grid">
+        {services.map((service, index) => (
+          <div className="service-card" key={index}>
+            <img src={service.image} alt={service.title} />
+            <h3>{service.title}</h3>
+            <p>{service.description}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
