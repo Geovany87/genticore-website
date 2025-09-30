@@ -1,24 +1,23 @@
-// src/App.jsx
+// src/pages/App.jsx
 import React from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Hero from "./pages/Hero";
-import About from "./pages/About";
-import Services from "./pages/Services";
-import Portfolio from "./pages/Portfolio";
-import Contact from "./pages/Contact";
-import "./styles/global.css"; // ensure global styles are included
+import Header from "../components/Header";
+import Hero from "../components/Hero";
+import About from "../pages/About";
+import Services from "../pages/Services";
+import Portfolio from "../pages/Portfolio";
+import Contact from "../pages/Contact";
+import Footer from "../components/Footer";
 
 function App() {
   return (
     <>
       <Header />
       <main>
-        <Hero />
-        <About />
-        <Services />
-        <Portfolio />
-        <Contact />
+        <section id="hero"><Hero /></section>
+        <section id="about"><About /></section>
+        <section id="services"><Services /></section>
+        <section id="portfolio"><Portfolio /></section>
+        <section id="contact"><Contact /></section>
       </main>
       <Footer />
     </>
