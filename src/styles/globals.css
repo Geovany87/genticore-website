@@ -1,6 +1,8 @@
-/* src/styles/globals.css */
+/* ===========================
+   Genticore Global Styles
+   =========================== */
 
-/* Reset */
+/* CSS Reset (normalize) */
 *,
 *::before,
 *::after {
@@ -9,47 +11,117 @@
   box-sizing: border-box;
 }
 
-html {
-  font-size: 100%;
+/* Root variables (branding) */
+:root {
+  --color-primary: #0d47a1;     /* Deep blue */
+  --color-secondary: #1976d2;   /* Accent blue */
+  --color-accent: #42a5f5;      /* Light accent */
+  --color-background: #f9f9f9;
+  --color-surface: #ffffff;
+  --color-text: #1e1e1e;
+  --color-muted: #6b7280;
+
+  --font-family-base: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-family-heading: "Poppins", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.5rem;
+  --font-size-xxl: 2rem;
+
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);
+
+  --container-width: 1200px;
+}
+
+/* Global body styles */
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-background);
   -webkit-font-smoothing: antialiased;
 }
 
-body {
-  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--color-text);
-  background-color: var(--color-background);
-}
-
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  color: var(--color-heading);
-  line-height: 1.25;
-}
-
-p {
-  margin-bottom: var(--spacing-md);
-}
-
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Layout helpers */
+/* Layout container */
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--container-width);
   margin: 0 auto;
-  padding: 0 var(--spacing-lg);
+  padding: 0 var(--spacing-md);
 }
 
-.section {
-  padding: var(--spacing-xl) 0;
+/* Headings */
+h1, h2, h3, h4 {
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+h1 { font-size: var(--font-size-xxl); }
+h2 { font-size: var(--font-size-xl); }
+h3 { font-size: var(--font-size-lg); }
+
+/* Text utilities */
+.text-center { text-align: center; }
+.text-muted { color: var(--color-muted); }
+
+/* Sections */
+section {
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.section_title {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+  color: var(--color-primary);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #fff;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background: var(--color-secondary);
+}
+
+/* Responsive Grid Utilities */
+.grid {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.25rem; }
+  section { padding: var(--spacing-lg) var(--spacing-sm); }
 }
