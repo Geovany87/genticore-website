@@ -1,58 +1,57 @@
-// src/pages/Portfolio.jsx
 import React from "react";
 import "../styles/portfolio.css";
-import portfolioImg1 from "../assets/images/projects/portfolio-v1.png";
-import restaurantImg from "../assets/images/projects/restaurant-site.png";
 
-function Portfolio() {
-  const projects = [
-    {
-      title: "Portfolio v1",
-      description: "My first personal portfolio website showcasing my early projects.",
-      image: portfolioImg1,
-      link: "#",
-    },
-    {
-      title: "Restaurant Website",
-      description: "A modern responsive restaurant site with menu and reservations.",
-      image: restaurantImg,
-      link: "#",
-    },
-    {
-      title: "Future Project",
-      description: "This project is currently in development. Stay tuned!",
-      image: null, // no image yet
-      link: null,
-      placeholder: true,
-    },
-  ];
+const projects = [
+  {
+    title: "E-commerce Platform",
+    description: "Fully functional online store with secure payments and modern design.",
+    image: "/src/assets/images/projects/ecommerce-dashboard.png",
+    link: "#",
+    status: "completed",
+  },
+  {
+    title: "Restaurant Website",
+    description: "Custom website for online menu and reservations.",
+    image: "/src/assets/images/projects/restaurant-site.png",
+    link: "#",
+    status: "completed",
+  },
+  {
+    title: "CRM Tool",
+    description: "In development — next-gen customer relationship management software.",
+    image: "/src/assets/images/projects/placeholder.png",
+    link: "#",
+    status: "in-progress",
+  },
+  {
+    title: "Mobile App",
+    description: "In development — cross-platform mobile app for on-the-go services.",
+    image: "/src/assets/images/projects/placeholder.png",
+    link: "#",
+    status: "in-progress",
+  },
+];
 
+export default function Portfolio() {
   return (
     <section id="portfolio" className="portfolio">
-      <h2>My Portfolio</h2>
-      <div className="portfolio-grid">
-        {projects.map((project, index) => (
-          <div
-            className={`portfolio-card ${project.placeholder ? "placeholder" : ""}`}
-            key={index}
-          >
-            {project.image ? (
-              <img src={project.image} alt={project.title} />
-            ) : (
-              <div className="placeholder-image">In Development</div>
-            )}
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-            {project.link && (
-              <a href={project.link} target="_blank" rel="noopener noreferrer">
-                View Project
-              </a>
-            )}
-          </div>
-        ))}
+      <div className="portfolio_container">
+        <h2 className="section_title">Our Portfolio</h2>
+        <div className="portfolio_grid">
+          {projects.map((project, index) => (
+            <div key={index} className={`portfolio_card ${project.status}`}>
+              <img src={project.image} alt={project.title} className="portfolio_img" />
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              {project.status === "completed" ? (
+                <a href={project.link} className="portfolio_link">View Project</a>
+              ) : (
+                <span className="portfolio_status">🚧 In Development</span>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
-
-export default Portfolio;
