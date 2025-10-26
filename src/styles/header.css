@@ -1,9 +1,9 @@
-/* src/styles/header.css */
+/* ============================================================
+   HEADER.CSS
+   Responsive navigation bar with brand + menu toggle
+   ============================================================ */
+
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
   background: var(--color-surface);
   box-shadow: var(--shadow-sm);
   position: sticky;
@@ -11,79 +11,66 @@
   z-index: 1000;
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--color-primary);
-}
-
-.nav ul {
+.header_container {
   display: flex;
-  list-style: none;
-  gap: 1.5rem;
-  margin: 0;
-  padding: 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) var(--space-md);
 }
 
-.nav a {
-  text-decoration: none;
-  font-weight: 500;
-  color: var(--color-dark);
-  transition: color 0.3s ease;
-}
-
-.nav a:hover {
+.header_logo {
+  font-size: var(--fs-lg);
+  font-weight: 600;
   color: var(--color-primary);
 }
 
-/* Hamburger Menu */
-.hamburger {
+.nav_links {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.nav_links a {
+  color: var(--color-text-dark);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav_links a:hover {
+  color: var(--color-accent);
+}
+
+/* ---------- Mobile Menu ---------- */
+.menu_toggle {
   display: none;
   flex-direction: column;
   cursor: pointer;
-  gap: 5px;
 }
 
-.hamburger span {
-  width: 25px;
+.menu_toggle span {
   height: 3px;
-  background: var(--color-dark);
-  border-radius: 3px;
-  transition: 0.3s;
+  width: 25px;
+  background: var(--color-primary);
+  margin: 4px 0;
+  transition: var(--transition);
 }
 
-/* Rotate effect when open */
-.hamburger.open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* Mobile nav */
 @media (max-width: 768px) {
-  .nav ul {
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: var(--color-surface);
-    width: 200px;
-    padding: 1rem;
+  .nav_links {
     display: none;
+    flex-direction: column;
+    background: var(--color-surface);
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: var(--space-md);
     box-shadow: var(--shadow-md);
   }
 
-  .nav.active ul {
+  .nav_links.active {
     display: flex;
   }
 
-  .hamburger {
+  .menu_toggle {
     display: flex;
   }
 }
