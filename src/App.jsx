@@ -1,28 +1,19 @@
-// ============================================================
-// App.jsx
-// Root component: Imports and renders all site sections
-// ============================================================
-
+// src/App.jsx
 import React from "react";
-import "./styles/global.css";
-import "./styles/variables.css";
-import "./styles/hero.css";
-import "./styles/about.css";
-import "./styles/services.css";
-import "./styles/portfolio.css";
-import "./styles/contact.css";
-import Navbar from "./components/Navbar";
-import Hero from "./pages/Hero";
-import About from "./pages/About";
-import Services from "./pages/Services";
-import Portfolio from "./pages/Portfolio";
-import Contact from "./pages/Contact";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Services from "./components/Services";
+import Portfolio from "./components/Portfolio";
+import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import "./styles/globals.css";
 
-function App() {
+export default function App() {
   return (
-    <>
-      <Navbar />
+    <div className="app">
+      <Header />
+
       <main>
         <Hero />
         <About />
@@ -30,9 +21,8 @@ function App() {
         <Portfolio />
         <Contact />
       </main>
+
       <Footer />
-    </>
+    </div>
   );
 }
-
-export default App;
