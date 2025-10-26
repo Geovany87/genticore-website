@@ -1,1 +1,28 @@
-import React from 'react';\nimport '../styles/contact.css';\n\nexport default function Contact() {\n  return (\n    <section id='contact' className='contact-section'>\n      <div className='container'>\n        <h2>Contact</h2>\n        <p className='section-intro'>Let's connect. Whether you have a project idea, need technical support, or want to collaborate — reach out below.</p>\n        <form className='contact-form' onSubmit={(e) => e.preventDefault()}>\n          <div className='form-group'>\n            <label htmlFor='name'>Name</label>\n            <input type='text' id='name' name='name' placeholder='Your Name' required />\n          </div>\n          <div className='form-group'>\n            <label htmlFor='email'>Email</label>\n            <input type='email' id='email' name='email' placeholder='you@example.com' required />\n          </div>\n          <div className='form-group'>\n            <label htmlFor='message'>Message</label>\n            <textarea id='message' name='message' placeholder='Write your message...' rows='5' required></textarea>\n          </div>\n          <button type='submit' className='btn-primary'>Send Message</button>\n        </form>\n      </div>\n    </section>\n  );\n}
+import React from "react";
+import "../styles/contact.css";
+
+export default function Contact() {
+  return (
+    <section id="contact" className="contact">
+      <div className="container">
+        <h2>Contact</h2>
+        <p className="subtitle">Let’s build something great together.</p>
+        <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Your name" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" placeholder="Your email" required />
+          </label>
+          <label>
+            Message
+            <textarea name="message" placeholder="Your message" required></textarea>
+          </label>
+          <button type="submit" className="btn-primary">Send Message</button>
+        </form>
+      </div>
+    </section>
+  );
+}

@@ -1,1 +1,30 @@
-import React from 'react';\nimport '../styles/services.css';\n\nexport default function Services() {\n  return (\n    <section id='services' className='services-section'>\n      <div className='container'>\n        <h2>Services</h2>\n        <div className='services-grid'>\n          <div className='service-card'>\n            <h3>IT Support & Troubleshooting</h3>\n            <p>Providing professional hardware repair, OS installation, and system optimization for individuals and small businesses.</p>\n          </div>\n          <div className='service-card'>\n            <h3>Full Stack Web Development</h3>\n            <p>Building clean, responsive, and maintainable web applications using MERN stack best practices and scalable architecture.</p>\n          </div>\n          <div className='service-card'>\n            <h3>AI-Assisted Workflows</h3>\n            <p>Leveraging documentation-driven execution and AI tools to accelerate research, debugging, and project delivery.</p>\n          </div>\n        </div>\n      </div>\n    </section>\n  );\n}
+import React from "react";
+import "../styles/services.css";
+
+export default function Services() {
+  return (
+    <section id="services" className="services">
+      <div className="container">
+        <h2>Services</h2>
+        <p className="subtitle">Tailored solutions for individuals and small businesses.</p>
+
+        <div className="service-grid">
+          <div className="card">
+            <h3>Web Development</h3>
+            <p>Custom, responsive websites built with the MERN stack (MongoDB, Express, React, Node.js).</p>
+          </div>
+
+          <div className="card">
+            <h3>Technical Support</h3>
+            <p>PC repair, network setup, and IT troubleshooting with documentation-driven execution.</p>
+          </div>
+
+          <div className="card">
+            <h3>Automation & Integrations</h3>
+            <p>Streamlining workflows with APIs, Docker, and AI-assisted automation tools.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -1,1 +1,35 @@
-import React from 'react';\nimport '../styles/portfolio.css';\n\nexport default function Portfolio() {\n  return (\n    <section id='portfolio' className='portfolio-section'>\n      <div className='container'>\n        <h2>Portfolio</h2>\n        <p className='section-intro'>Explore recent projects and works in progress that demonstrate full-stack capability, design precision, and documentation-driven execution.</p>\n        <div className='portfolio-grid'>\n          <div className='portfolio-card'>\n            <div className='portfolio-placeholder'>\n              <p>íº§ In Development</p>\n            </div>\n            <h3>Next Project Coming Soon</h3>\n            <p>A new full-stack project built with React, Node.js, and Express â€” deploying soon.</p>\n          </div>\n        </div>\n      </div>\n    </section>\n  );\n}
+import React from "react";
+import "../styles/portfolio.css";
+
+export default function Portfolio() {
+  return (
+    <section id="portfolio" className="portfolio">
+      <div className="container">
+        <h2>Portfolio</h2>
+        <p className="subtitle">
+          Selected projects showcasing problem-solving, clean design, and full-stack implementation.
+        </p>
+
+        <div className="portfolio-grid">
+          <div className="card">
+            <img src="/src/assets/images/projects/ecommerce-dashboard.png" alt="E-commerce Dashboard" />
+            <h3>E-commerce Dashboard</h3>
+            <p>Full MERN app for inventory management and sales analytics.</p>
+          </div>
+
+          <div className="card">
+            <img src="/src/assets/images/projects/restaurant-site.png" alt="Restaurant Website" />
+            <h3>Restaurant Website</h3>
+            <p>Responsive design with real-time table reservation system.</p>
+          </div>
+
+          <div className="card">
+            <img src="/src/assets/images/projects/portfolio-v1.png" alt="Portfolio v1" />
+            <h3>Portfolio v1</h3>
+            <p>My first professional website â€” the foundation for this version.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
