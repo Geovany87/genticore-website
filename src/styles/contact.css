@@ -1,1 +1,69 @@
-.contact-section {\n  padding: 80px 20px;\n  background: var(--background-alt);\n  color: var(--text-light);\n}\n\n.contact-section h2 {\n  text-align: center;\n  font-size: 2rem;\n  margin-bottom: 1.5rem;\n}\n\n.section-intro {\n  max-width: 700px;\n  margin: 0 auto 2rem;\n  text-align: center;\n  line-height: 1.6;\n}\n\n.contact-form {\n  max-width: 600px;\n  margin: 0 auto;\n  display: flex;\n  flex-direction: column;\n  gap: 1rem;\n}\n\n.form-group {\n  display: flex;\n  flex-direction: column;\n  text-align: left;\n}\n\n.form-group label {\n  margin-bottom: 0.5rem;\n  font-weight: 500;\n}\n\n.form-group input,\n.form-group textarea {\n  padding: 12px;\n  border-radius: 6px;\n  border: 1px solid var(--border-color);\n  background: var(--background-light);\n  color: var(--text-dark);\n  font-size: 1rem;\n}\n\n.form-group input:focus,\n.form-group textarea:focus {\n  outline: 2px solid var(--accent-color);\n}\n\n.btn-primary {\n  align-self: center;\n  background: var(--accent-color);\n  color: #fff;\n  border: none;\n  border-radius: 6px;\n  padding: 12px 24px;\n  font-size: 1rem;\n  font-weight: 600;\n  cursor: pointer;\n  transition: background 0.3s ease;\n}\n\n.btn-primary:hover {\n  background: var(--accent-dark);\n}
+@import "./variables.css";
+
+.contact {
+  background: var(--color-bg);
+  color: var(--color-text);
+  padding: 6rem 1.5rem;
+  text-align: center;
+}
+
+.contact .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact h2 {
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.contact .subtitle {
+  color: var(--color-text-light);
+  margin-bottom: 3rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-form label {
+  text-align: left;
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--color-bg-secondary);
+  color: var(--color-text);
+}
+
+.contact-form button {
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: var(--color-accent-hover);
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .contact-form {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
