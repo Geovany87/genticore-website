@@ -1,25 +1,39 @@
+// src/components/Footer.jsx
 import React from "react";
 import "../styles/footer.css";
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <footer className="footer">
-      <div className="container footer__content">
-        <p>&copy; {new Date().getFullYear()} Genticore. All rights reserved.</p>
-        <ul className="footer__links">
+    <footer className="site-footer">
+      <div className="footer-content">
+        <p>
+          &copy; {new Date().getFullYear()} <strong>Genticore</strong> — All
+          Rights Reserved.
+        </p>
+        <ul className="social-links">
           <li>
-            <a href="#about">About</a>
+            <a
+              href="https://github.com/Geovany87"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
           </li>
           <li>
-            <a href="#portfolio">Portfolio</a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
           </li>
           <li>
-            <a href="#contact">Contact</a>
+            <a href="mailto:genticore@outlook.com">Email</a>
           </li>
         </ul>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}
