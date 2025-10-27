@@ -1,13 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- ✅ Meta & Basic Setup -->
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>genticore-website</title>
+    <meta
+      name="description"
+      content="Genticore — Freelance full-stack developer portfolio showcasing modern web applications built with the MERN stack."
+    />
+    <meta name="author" content="Genticore" />
+    <meta name="theme-color" content="#0a0a23" />
+
+    <!-- ✅ SEO & Social Media -->
+    <meta property="og:title" content="Genticore Portfolio" />
+    <meta
+      property="og:description"
+      content="Explore professional MERN-based web development projects and services by Genticore."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://genticore.vercel.app/" />
+    <meta property="og:image" content="/public/favicons/android-chrome-192x192.png" />
+
+    <!-- ✅ Favicon & App Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/public/favicons/favicon-48x48.png" />
+    <link rel="apple-touch-icon" href="/public/favicons/apple-touch-icon.png" />
+    <link rel="manifest" href="/public/favicons/site.webmanifest" />
+
+    <!-- ✅ Title -->
+    <title>Genticore | Full-Stack Developer</title>
   </head>
+
   <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <!-- ✅ React Mount Point -->
     <div id="root"></div>
+
+    <!-- ✅ Main React Entry -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
