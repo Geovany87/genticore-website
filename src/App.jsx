@@ -1,4 +1,3 @@
-// src/App.jsx
 import React from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -11,18 +10,39 @@ import "./styles/globals.css";
 
 export default function App() {
   return (
-    <div className="app">
+    <>
+      {/* ✅ Header Navigation */}
       <Header />
 
+      {/* ✅ Hero Section */}
       <main>
-        <Hero />
-        <About />
-        <Services />
-        <Portfolio />
-        <Contact />
+        <section id="hero">
+          <Hero />
+        </section>
+
+        {/* ✅ About Section */}
+        <section id="about">
+          <About />
+        </section>
+
+        {/* ✅ Services Section */}
+        <section id="services">
+          <Services />
+        </section>
+
+        {/* ✅ Portfolio / Projects Section */}
+        <section id="portfolio">
+          <Portfolio />
+        </section>
+
+        {/* ✅ Contact Section */}
+        <section id="contact">
+          <Contact />
+        </section>
       </main>
 
+      {/* ✅ Footer */}
       <Footer />
-    </div>
+    </>
   );
 }
