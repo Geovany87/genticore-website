@@ -1,76 +1,61 @@
-/* ============================================================
-   HEADER.CSS
-   Responsive navigation bar with brand + menu toggle
-   ============================================================ */
+@import "./variables.css";
 
-.header {
-  background: var(--color-surface);
-  box-shadow: var(--shadow-sm);
+/* ---------- HEADER ---------- */
+header {
+  background: var(--color-bg);
+  box-shadow: var(--shadow-soft);
   position: sticky;
   top: 0;
   z-index: 1000;
+  padding: 1rem 1.5rem;
 }
 
-.header_container {
+.navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: var(--space-sm) var(--space-md);
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.header_logo {
-  font-size: var(--fs-lg);
-  font-weight: 600;
-  color: var(--color-primary);
+.navbar-logo img {
+  height: 40px;
+  width: auto;
 }
 
-.nav_links {
-  display: flex;
-  gap: var(--space-md);
+.nav-links {
+  display: none;
+  list-style: none;
+  gap: 2rem;
 }
 
-.nav_links a {
-  color: var(--color-text-dark);
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-text);
   font-weight: 500;
-  transition: var(--transition);
+  transition: color 0.3s ease;
 }
 
-.nav_links a:hover {
+.nav-links a:hover {
   color: var(--color-accent);
 }
 
-/* ---------- Mobile Menu ---------- */
-.menu_toggle {
-  display: none;
-  flex-direction: column;
+.menu-toggle {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--color-text);
   cursor: pointer;
 }
 
-.menu_toggle span {
-  height: 3px;
-  width: 25px;
-  background: var(--color-primary);
-  margin: 4px 0;
-  transition: var(--transition);
-}
-
-@media (max-width: 768px) {
-  .nav_links {
+/* ---------- RESPONSIVE ---------- */
+@media (min-width: 768px) {
+  .menu-toggle {
     display: none;
-    flex-direction: column;
-    background: var(--color-surface);
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    padding: var(--space-md);
-    box-shadow: var(--shadow-md);
   }
 
-  .nav_links.active {
-    display: flex;
-  }
-
-  .menu_toggle {
+  .nav-links {
     display: flex;
   }
 }

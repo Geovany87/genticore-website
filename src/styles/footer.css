@@ -1,27 +1,50 @@
-/* ============================================================
-   FOOTER.CSS
-   Footer with social links and copyright
-   ============================================================ */
+@import "./variables.css";
 
-.footer {
-  background: var(--color-primary);
+/* ---------- FOOTER ---------- */
+footer {
+  background: var(--color-bg-secondary);
   color: var(--color-text-light);
   text-align: center;
-  padding: var(--space-md) var(--space-sm);
+  padding: 3rem 1.5rem;
 }
 
-.footer a {
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-logo img {
+  height: 40px;
+  width: auto;
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-links a {
   color: var(--color-text-light);
-  margin: 0 var(--space-xs);
-  transition: var(--transition);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
 }
 
-.footer a:hover {
+.footer-links a:hover {
   color: var(--color-accent);
 }
 
-.footer small {
-  display: block;
-  margin-top: var(--space-sm);
-  font-size: var(--fs-sm);
+footer p {
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (min-width: 768px) {
+  .footer-links {
+    gap: 3rem;
+  }
 }
