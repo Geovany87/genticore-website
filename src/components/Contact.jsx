@@ -4,23 +4,35 @@ import "../styles/contact.css";
 export default function Contact() {
   return (
     <section id="contact" className="contact">
-      <div className="container">
-        <h2>Contact</h2>
-        <p className="subtitle">Let’s build something great together.</p>
-        <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
-          <label>
-            Name
-            <input type="text" name="name" placeholder="Your name" required />
-          </label>
-          <label>
-            Email
-            <input type="email" name="email" placeholder="Your email" required />
-          </label>
-          <label>
-            Message
-            <textarea name="message" placeholder="Your message" required></textarea>
-          </label>
-          <button type="submit" className="btn-primary">Send Message</button>
+      <div className="contact__container">
+        <h2>Get in Touch</h2>
+        <p className="contact__intro">
+          Have a project in mind or need technical support? Let’s collaborate and build something meaningful.
+        </p>
+
+        <form
+          className="contact__form"
+          action="https://formspree.io/f/mnqeyjjv"
+          method="POST"
+        >
+          <div className="form__group">
+            <label htmlFor="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div className="form__group">
+            <label htmlFor="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div className="form__group">
+            <label htmlFor="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+
+          <button type="submit" className="btn btn--primary">
+            Send Message
+          </button>
         </form>
       </div>
     </section>

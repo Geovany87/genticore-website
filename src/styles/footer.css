@@ -1,50 +1,22 @@
-@import "./variables.css";
-
-/* ---------- FOOTER ---------- */
-footer {
-  background: var(--color-bg-secondary);
-  color: var(--color-text-light);
+.footer {
+  background: var(--color-primary, #004aad);
+  color: white;
   text-align: center;
-  padding: 3rem 1.5rem;
+  padding: 1.8rem 1rem;
 }
 
-.footer-container {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.footer-logo img {
-  height: 40px;
-  width: auto;
-  margin-bottom: 1rem;
-}
-
-.footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-
-.footer-links a {
-  color: var(--color-text-light);
-  text-decoration: none;
+.footer__content {
   font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.footer__content a {
+  color: #dce9ff;
+  text-decoration: none;
+  font-weight: 500;
   transition: color 0.3s ease;
 }
 
-.footer-links a:hover {
-  color: var(--color-accent);
-}
-
-footer p {
-  font-size: 0.85rem;
-  margin-top: 1rem;
-}
-
-/* ---------- RESPONSIVE ---------- */
-@media (min-width: 768px) {
-  .footer-links {
-    gap: 3rem;
-  }
+.footer__content a:hover {
+  color: #ffffff;
 }
