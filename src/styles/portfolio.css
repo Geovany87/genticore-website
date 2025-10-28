@@ -1,49 +1,98 @@
-@import "./variables.css";
-
 .portfolio {
-  background: var(--color-bg-secondary);
-  color: var(--color-text);
-  padding: 6rem 1.5rem;
+  background: var(--color-bg-alt, #f5f7fa);
+  padding: 6rem 2rem;
   text-align: center;
 }
 
+.portfolio__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .portfolio h2 {
-  color: var(--color-accent);
+  font-size: 2.2rem;
+  color: var(--color-primary, #004aad);
   margin-bottom: 1rem;
 }
 
-.portfolio .subtitle {
-  color: var(--color-text-light);
+.portfolio__intro {
+  color: var(--color-text-light, #555);
+  font-size: 1.1rem;
   margin-bottom: 3rem;
 }
 
-.portfolio-grid {
+.portfolio__grid {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
-.portfolio .card {
-  background: var(--color-card-bg);
-  border-radius: 10px;
-  padding: 1.5rem;
-  box-shadow: var(--shadow-soft);
-  transition: all 0.3s ease;
+.portfolio__card {
+  background: var(--color-surface, #fff);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md, 0 4px 16px rgba(0, 0, 0, 0.1));
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.portfolio .card img {
+.portfolio__card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg, 0 6px 24px rgba(0, 0, 0, 0.15));
+}
+
+.portfolio__image {
   width: 100%;
-  border-radius: 8px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.portfolio__placeholder {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--color-primary, #004aad);
+  background: linear-gradient(135deg, #eaf2ff, #f5f7fa);
+}
+
+.portfolio__content {
+  padding: 1.5rem;
+}
+
+.portfolio__content h3 {
+  font-size: 1.3rem;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.portfolio__content p {
+  color: var(--color-text, #444);
   margin-bottom: 1rem;
 }
 
-.portfolio .card:hover {
-  transform: scale(1.02);
-  box-shadow: var(--shadow-strong);
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: var(--color-primary, #004aad);
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #00327e;
 }
 
 /* Responsive */
-@media (min-width: 768px) {
-  .portfolio-grid {
-    grid-template-columns: repeat(3, 1fr);
+@media (max-width: 768px) {
+  .portfolio h2 {
+    font-size: 1.8rem;
+  }
+
+  .portfolio__intro {
+    font-size: 1rem;
   }
 }
