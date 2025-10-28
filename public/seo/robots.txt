@@ -1,0 +1,6 @@
+User-agent: * 
+Allow: /
+
+Sitemap: https://genticore.com/sitemap.xml
+Host: https://genticore.com
+
