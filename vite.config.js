@@ -1,15 +1,19 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import path from "path";
 
 export default defineConfig({
   plugins: [react()],
-  server: {
-    host: 'localhost',
-    port: 5173,
-    open: true,
-    https: false, // Set to true if you have SSL certs
+  resolve: {
+    alias: {
+      "@components": path.resolve(__dirname, "src/components"),
+      "@assets": path.resolve(__dirname, "src/assets"),
+      "@styles": path.resolve(__dirname, "src/styles"),
+      "@pages": path.resolve(__dirname, "src/pages"),
+    },
   },
-  build: {
-    outDir: 'dist',
+  server: {
+    host: true,
+    port: 5173,
   },
 });

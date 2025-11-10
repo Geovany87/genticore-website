@@ -1,39 +1,80 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/header.css";
+import logo from "../assets/images/logo.png"; // Replace with your actual logo path
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
 
-  const toggleMenu = () => setMenuOpen(!menuOpen);
-  const closeMenu = () => setMenuOpen(false);
+  // Handle scroll shadow and section highlight
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+
+      const sections = document.querySelectorAll("section[id]");
+      let current = "hero";
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 150;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+      setActiveSection(current);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Smooth scroll behavior
+  const handleLinkClick = (e, id) => {
+    e.preventDefault();
+    const target = document.querySelector(id);
+    if (target) {
+      window.scrollTo({
+        top: target.offsetTop - 60,
+        behavior: "smooth",
+      });
+    }
+    setIsMobileMenuOpen(false);
+  };
 
   return (
-    <header className="header">
-      <div className="header__container">
-        <div className="header__logo">
-          <a href="#hero" onClick={closeMenu}>Genticore</a>
-        </div>
+    <header className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
+      <div className="navbar-container">
+        <a href="#hero" className="navbar-logo" onClick={(e) => handleLinkClick(e, "#hero")}>
+          <img src={logo} alt="GenticoRe Logo" />
+          <span>GentiCore</span>
+        </a>
 
-        {/* Hamburger menu for mobile */}
         <button
-          className={`header__toggle ${menuOpen ? "active" : ""}`}
-          onClick={toggleMenu}
+          className="menu-toggle"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle navigation"
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <span className={`bar ${isMobileMenuOpen ? "open" : ""}`}></span>
+          <span className={`bar ${isMobileMenuOpen ? "open" : ""}`}></span>
+          <span className={`bar ${isMobileMenuOpen ? "open" : ""}`}></span>
         </button>
 
-        {/* Navigation Links */}
-        <nav className={`header__nav ${menuOpen ? "open" : ""}`}>
-          <ul>
-            <li><a href="#hero" onClick={closeMenu}>Home</a></li>
-            <li><a href="#about" onClick={closeMenu}>About</a></li>
-            <li><a href="#services" onClick={closeMenu}>Services</a></li>
-            <li><a href="#portfolio" onClick={closeMenu}>Portfolio</a></li>
-            <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
-          </ul>
+        <nav className={`navbar-links ${isMobileMenuOpen ? "active" : ""}`}>
+          {[
+            { id: "#hero", label: "Home" },
+            { id: "#about", label: "About" },
+            { id: "#services", label: "Services" },
+            { id: "#portfolio", label: "Portfolio" },
+            { id: "#contact", label: "Contact" },
+          ].map((link) => (
+            <a
+              key={link.id}
+              href={link.id}
+              onClick={(e) => handleLinkClick(e, link.id)}
+              className={activeSection === link.id.substring(1) ? "active" : ""}
+            >
+              {link.label}
+            </a>
+          ))}
         </nav>
       </div>
     </header>

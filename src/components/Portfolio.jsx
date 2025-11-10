@@ -1,76 +1,41 @@
 import React from "react";
 import "../styles/portfolio.css";
+import projectPlaceholder from "../assets/images/projects/portfolio-v1.png";
 
 export default function Portfolio() {
   const projects = [
     {
-      title: "E-Commerce Dashboard",
-      description: "Full-stack MERN application for managing inventory and sales analytics.",
-      status: "Completed",
-      image: "/src/assets/images/projects/ecommerce-dashboard.png",
-      link: "#",
+      id: 1,
+      title: "Genetic Algorithm Visualizer",
+      image: projectPlaceholder,
+      description: "A visualization tool for simulating genetic evolution algorithms.",
     },
     {
-      title: "Restaurant Website",
-      description: "Responsive landing page with online menu and booking system.",
-      status: "Completed",
-      image: "/src/assets/images/projects/restaurant-site.png",
-      link: "#",
+      id: 2,
+      title: "AI Medical Scanner",
+      image: projectPlaceholder,
+      description: "A deep learning-based web app for early disease detection and analysis.",
     },
     {
-      title: "Portfolio v1",
-      description: "Personal developer portfolio built with React and styled-components.",
-      status: "Completed",
-      image: "/src/assets/images/projects/portfolio-v1.png",
-      link: "#",
-    },
-    {
-      title: "Upcoming Projects",
-      description: "Exciting projects in development — stay tuned!",
-      status: "In Development",
-      image: "",
-      link: "#",
+      id: 3,
+      title: "DNA Data Dashboard",
+      image: projectPlaceholder,
+      description: "A bioinformatics dashboard for visualizing and analyzing genomic datasets.",
     },
   ];
 
   return (
-    <section id="portfolio" className="portfolio">
-      <div className="portfolio__container">
-        <h2>Portfolio</h2>
-        <p className="portfolio__intro">
-          A collection of recent freelance and personal projects showcasing my skills in
-          web development, IT support, and digital solutions.
-        </p>
-
-        <div className="portfolio__grid">
-          {projects.map((project, index) => (
-            <div className="portfolio__card" key={index}>
-              {project.image ? (
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="portfolio__image"
-                />
-              ) : (
-                <div className="portfolio__placeholder">🚧 {project.status}</div>
-              )}
-              <div className="portfolio__content">
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                {project.link && (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn"
-                  >
-                    View Project
-                  </a>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
+    <section className="portfolio" id="portfolio">
+      <h2>My Portfolio</h2>
+      <p>Explore some of my featured research and projects.</p>
+      <div className="portfolio-grid">
+        {projects.map((project) => (
+          <div className="portfolio-item" key={project.id}>
+            <img src={project.image} alt={project.title} />
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+          </div>
+        ))}
       </div>
     </section>
   );

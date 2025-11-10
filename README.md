@@ -1,35 +1,41 @@
-# í¼ Genticore â€” Professional Freelance Portfolio  
+# ï¿½ï¿½ï¿½ Genticore â€” Professional Freelance Portfolio
+
 **By Geovany Cardoza**  
-*Full-Stack Developer | IT Support | CompTIA A+ Certified*  
+_Full-Stack Developer | IT Support | CompTIA A+ Certified_
 
-## í³˜ Overview  
+## ï¿½ï¿½ï¿½ Overview
+
 Genticore is a personal freelancer portfolio website showcasing technical expertise in full-stack web development, IT automation, and technical support.  
-Built using React + Vite, it follows modern UI/UX design systems, accessibility standards, and Penn LPS Full-Stack architecture.  
+Built using React + Vite, it follows modern UI/UX design systems, accessibility standards, and Penn LPS Full-Stack architecture.
 
-## íº€ Features  
-- React + Vite modern framework  
-- Responsive design (mobile-first)  
-- Modular components & clean CSS  
-- SEO optimized with favicon bundle  
-- Ready for Netlify deployment  
+## ï¿½ï¿½ï¿½ Features
 
-## âš™ï¸ Setup  
-```bash  
-git clone git@github.com:Geovany87/genticore-website.git  
-cd genticore-website  
-npm install  
-npm run dev  
-```  
+- React + Vite modern framework
+- Responsive design (mobile-first)
+- Modular components & clean CSS
+- SEO optimized with favicon bundle
+- Ready for Netlify deployment
+
+## âš™ï¸ Setup
+
+```bash
+git clone git@github.com:Geovany87/genticore-website.git
+cd genticore-website
+npm install
+npm run dev
+```
 
 Visit: [http://localhost:5173](http://localhost:5173)
 
-## íºª License  
-This project is licensed under the MIT License.  
-See LICENSE for details.  
+## ï¿½ï¿½ï¿½ License
 
-## âœ‰ï¸ Contact  
+This project is licensed under the MIT License.  
+See LICENSE for details.
+
+## âœ‰ï¸ Contact
+
 **Geovany Cardoza**  
-í¼ [genticore.com](https://genticore.com)  
-í³§ geovanycardoza@gmail.com  
-í³ Philadelphia, PA  
-í´— [LinkedIn](https://linkedin.com/in/geovanycardoza)
+ï¿½ï¿½ï¿½ [genticore.com](https://genticore.com)  
+ï¿½ï¿½ï¿½ geovanycardoza@gmail.com  
+ï¿½ï¿½ï¿½ Philadelphia, PA  
+ï¿½ï¿½ï¿½ [LinkedIn](https://linkedin.com/in/geovanycardoza)

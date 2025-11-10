@@ -1,24 +1,28 @@
-import React from "react";
-import "../styles/about.css";
+// src/pages/About.jsx
+import React from 'react';
+import '../styles/about.css';
 
 export default function About() {
   return (
-    <section id="about" className="about">
-      <div className="container about_content">
+    <section id="about" className="about-section">
+      <div className="about-content">
         <h2>About Me</h2>
         <p>
-          I’m <strong>Geovany Cardoza</strong>, an IT Support specialist and
-          Full Stack Developer with experience in building scalable web
-          applications and providing technical solutions. With a foundation in
-          hardware repair, operating systems, and modern web technologies, I
-          help businesses solve problems and grow through technology.
+          I’m a CompTIA A+ Certified technician and MERN stack developer based in Philadelphia. With
+          hands-on experience supporting local clients, I bridge hardware expertise and software
+          development to deliver complete technology solutions.
         </p>
         <p>
-          Skilled in <strong>MERN stack</strong> (MongoDB, Express.js, React,
-          Node.js), Docker, and IT workflows, I combine hands-on experience
-          with research-driven learning to deliver efficient and reliable
-          results for every client.
+          My workflow emphasizes documentation, research, and AI-assisted problem-solving — a system
+          that enables me to adapt quickly, solve challenges efficiently, and deliver results that
+          last.
         </p>
+        <ul className="skills-list">
+          <li>⚙️ Hardware & OS Configuration</li>
+          <li>💻 Full Stack JavaScript (MERN)</li>
+          <li>🧠 Adaptive AI Workflows</li>
+          <li>🔒 Secure System Optimization</li>
+        </ul>
       </div>
     </section>
   );

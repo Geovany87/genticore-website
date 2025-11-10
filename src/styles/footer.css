@@ -1,22 +1,14 @@
-.footer {
-  background: var(--color-primary, #004aad);
+footer {
+  background: #111;
   color: white;
   text-align: center;
-  padding: 1.8rem 1rem;
+  padding: 2rem 1rem;
 }
 
-.footer__content {
-  font-size: 0.95rem;
-  line-height: 1.6;
+footer a {
+  color: var(--primary);
 }
 
-.footer__content a {
-  color: #dce9ff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.footer__content a:hover {
-  color: #ffffff;
+footer a:hover {
+  text-decoration: underline;
 }
