@@ -1,34 +1,41 @@
-:root {
-  --primary: #0055aa;
-  --text-dark: #222;
-  --text-light: #555;
-  --bg-light: #f9f9f9;
-  --transition: all 0.3s ease;
-}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
-* {
-  box-sizing: border-box;
+html,
+body {
   margin: 0;
   padding: 0;
-}
-
-body {
-  font-family: "Inter", sans-serif;
-  background: var(--bg-light);
-  color: var(--text-dark);
-  line-height: 1.6;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: "Poppins", sans-serif;
+  transition: var(--transition);
+  scroll-behavior: smooth;
 }
 
 a {
-  color: var(--primary);
+  color: var(--color-accent);
   text-decoration: none;
   transition: var(--transition);
 }
 
 a:hover {
-  text-decoration: underline;
+  opacity: 0.8;
 }
 
 section {
   padding: 5rem 2rem;
+  min-height: 100vh;
+  transition: var(--transition);
+}
+/* ===========================
+   Section Animation Styles
+   =========================== */
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
