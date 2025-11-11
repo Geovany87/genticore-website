@@ -1,4 +1,3 @@
-import React from "react";
 import "../styles/portfolio.css";
 import projectPlaceholder from "../assets/images/projects/portfolio-v1.png";
 

@@ -1,10 +1,9 @@
-import React from "react";
 import "../styles/footer.css";
 
 export default function Footer() {
   return (
     <footer className="footer">
-      <p>© {new Date().getFullYear()} GentiCore. All Rights Reserved. Geovany Cardoza.</p>
+      <p>© {new Date().getFullYear()} Genticore. All Rights Reserved. Geovany Cardoza.</p>
     </footer>
   );
 }

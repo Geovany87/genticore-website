@@ -1,41 +1,22 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  background: var(--color-bg);
-  color: var(--color-text);
-  font-family: "Poppins", sans-serif;
-  transition: var(--transition);
+html {
   scroll-behavior: smooth;
 }
 
-a {
-  color: var(--color-accent);
-  text-decoration: none;
-  transition: var(--transition);
+body {
+  background-color: #ffffff;
+  color: #111;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease;
 }
 
-a:hover {
-  opacity: 0.8;
+main {
+  margin-top: 80px;
 }
 
-section {
-  padding: 5rem 2rem;
-  min-height: 100vh;
-  transition: var(--transition);
-}
-/* ===========================
-   Section Animation Styles
-   =========================== */
-section {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
+.animated-section {
+  padding: 80px 0;
+  position: relative;
+  width: 100%;
+  min-height: 60vh;
 }
