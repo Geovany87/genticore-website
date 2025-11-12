@@ -1,29 +1,52 @@
+@import "./variables.css";
+
 .services {
-  background: #eef3f9;
-  padding: 5rem 3rem;
+  padding: 100px 20px;
+  background: var(--color-background-light);
   text-align: center;
 }
 
-.service-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.services h2 {
+  color: var(--color-primary);
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .service-card {
   background: white;
-  padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  width: 280px;
-  transition: var(--transition);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  padding: 2rem 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
 }
 
 .service-card h3 {
-  color: var(--primary);
+  font-size: 1.4rem;
+  color: var(--color-dark);
+  margin-bottom: 1rem;
+}
+
+.service-card p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
 }

@@ -2,60 +2,43 @@ import React, { useState, useEffect } from "react";
 import "../styles/header.css";
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
-
-  const handleScroll = () => {
-    const sections = document.querySelectorAll("section[id]");
-    sections.forEach((section) => {
-      const rect = section.getBoundingClientRect();
-      if (rect.top <= 100 && rect.bottom >= 100) {
-        setActiveSection(section.id);
-      }
-    });
-  };
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("section[id]");
+      let current = "home";
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 80;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+      setActiveSection(current);
+      setScrolled(window.scrollY > 50);
+    };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <header className="header">
-      <div className="logo">Genticore</div>
-      <nav className={`nav ${isOpen ? "open" : ""}`}>
-        <a href="#home" className={activeSection === "home" ? "active" : ""}>
-          Home
-        </a>
-        <a href="#about" className={activeSection === "about" ? "active" : ""}>
-          About
-        </a>
-        <a
-          href="#services"
-          className={activeSection === "services" ? "active" : ""}
-        >
-          Services
-        </a>
-        <a
-          href="#portfolio"
-          className={activeSection === "portfolio" ? "active" : ""}
-        >
-          Portfolio
-        </a>
-        <a
-          href="#contact"
-          className={activeSection === "contact" ? "active" : ""}
-        >
-          Contact
-        </a>
-      </nav>
-      <button
-        className="menu-toggle"
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label="Toggle navigation"
-      >
-        ☰
-      </button>
+    <header className={`site-header ${scrolled ? "scrolled" : ""}`}>
+      <div className="nav-container">
+        <h1 className="logo">Genticore</h1>
+        <nav className="nav-links">
+          {["home", "about", "services", "portfolio", "contact"].map((id) => (
+            <a
+              key={id}
+              href={`#${id}`}
+              className={activeSection === id ? "active" : ""}
+            >
+              {id.charAt(0).toUpperCase() + id.slice(1)}
+            </a>
+          ))}
+        </nav>
+      </div>
     </header>
   );
 }

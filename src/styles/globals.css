@@ -1,22 +1,25 @@
+@import "./variables.css";
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: #ffffff;
-  color: #111;
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
   overflow-x: hidden;
-  transition: background-color 0.3s ease;
 }
 
-main {
-  margin-top: 80px;
+/* Fade-up Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.animated-section {
-  padding: 80px 0;
-  position: relative;
-  width: 100%;
-  min-height: 60vh;
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }

@@ -1,14 +1,15 @@
-footer {
-  background: #111;
-  color: white;
+@import "./variables.css";
+
+.footer {
+  background: var(--color-primary-dark);
+  color: var(--color-light);
   text-align: center;
   padding: 2rem 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  border-top: 2px solid var(--color-accent);
 }
 
-footer a {
-  color: var(--primary);
-}
-
-footer a:hover {
-  text-decoration: underline;
+.footer p {
+  margin: 0.4rem 0;
 }

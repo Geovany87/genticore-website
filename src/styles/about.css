@@ -1,16 +1,25 @@
+@import "./variables.css";
+
 .about {
-  background: white;
-  padding: 5rem 3rem;
+  background-color: var(--color-background-light);
+  padding: 100px 20px;
   text-align: center;
 }
 
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .about h2 {
-  color: var(--primary);
-  margin-bottom: 1rem;
+  color: var(--color-primary);
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
 }
 
 .about p {
-  color: var(--text-light);
-  max-width: 800px;
-  margin: 0 auto;
+  color: var(--color-dark);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
 }
