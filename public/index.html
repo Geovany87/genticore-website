@@ -1,59 +1,32 @@
+<!-- ...existing code... -->
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- ✅ META TAGS FOR ACCESSIBILITY & SEO -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Genticore — A modern, responsive portfolio and creative agency website built with React and Vite. Showcasing professional services and innovative projects."
-    />
-    <meta name="author" content="Geovany Alvarez" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Genticore</title>
 
-    <!-- ✅ TITLE -->
-    <title>Genticore | Creative Web Solutions</title>
+  <!-- Ensure root fills the viewport so body doesn't collapse -->
+  <style>
+    html, body, #root {
+      height: 100%;
+      margin: 0;
+    }
+    /* Make root at least viewport height and allow flex layouts inside */
+    #root {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
 
-    <!-- ✅ FAVICONS -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
-    <link rel="manifest" href="/favicons/site.webmanifest" />
+  <div id="root"><!-- React or app mounts here --></div>
 
-    <meta name="theme-color" content="#0A0A0A" />
-
-    <!-- ✅ OPEN GRAPH / SOCIAL MEDIA -->
-    <meta property="og:title" content="Genticore — Creative Web Solutions" />
-    <meta
-      property="og:description"
-      content="A professional portfolio and creative development agency built by Geovany Alvarez."
-    />
-    <meta property="og:image" content="/favicons/android-chrome-192x192.png" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://genticore.com" />
-
-    <!-- ✅ PRELOAD FONTS (Example: Inter / Roboto) -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- ✅ GLOBAL STYLES -->
-    <link rel="stylesheet" href="/src/styles/variables.css" />
-    <link rel="stylesheet" href="/src/styles/globals.css" />
-
-    <!-- ✅ FAVICON FALLBACK -->
-    <link rel="icon" href="/favicons/favicon.ico" />
-
-    <!-- ✅ ROBOTS & CANONICAL -->
-    <link rel="canonical" href="https://genticore.com" />
-    <meta name="robots" content="index, follow" />
-  </head>
-
-  <body>
-    <!-- ✅ ROOT ELEMENT -->
-    <div id="root"></div>
-
-    <!-- ✅ JS ENTRY POINT -->
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+  <!-- Load your app bundle (adjust path as needed for your build) -->
+  <script src="/static/js/bundle.js"></script>
+</body>
 </html>
+<!-- ...existing code... -->

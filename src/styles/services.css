@@ -1,52 +1,79 @@
-@import "./variables.css";
+/* ============================
+   SERVICES SECTION
+   ============================ */
 
 .services {
-  padding: 100px 20px;
-  background: var(--color-background-light);
+  padding: 5rem 2rem;
+  max-width: 1150px;
+  margin: 0 auto;
   text-align: center;
 }
 
-.services h2 {
-  color: var(--color-primary);
-  font-size: 2.4rem;
-  margin-bottom: 2rem;
+.section__title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.4rem;
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.service-card {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  padding: 2rem 1.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.service-icon {
-  font-size: 2.5rem;
-  color: var(--color-accent);
-  margin-bottom: 1rem;
-}
-
-.service-card h3 {
-  font-size: 1.4rem;
-  color: var(--color-dark);
-  margin-bottom: 1rem;
-}
-
-.service-card p {
-  color: #555;
+.section__subtitle {
+  color: #444;
   font-size: 1rem;
-  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.services__grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.service__card {
+  background: #fff;
+  padding: 2rem 2.2rem;
+  border-radius: 18px;
+  box-shadow: 0px 10px 30px rgba(0, 132, 255, 0.15);
+  text-align: left;
+  transition: 0.25s ease;
+  border: 1px solid #e9f3ff;
+}
+
+.service__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 16px 35px rgba(0, 132, 255, 0.25);
+}
+
+.service__icon {
+  font-size: 2.4rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.service__card h3 {
+  color: var(--primary-dark, #005bb3);
+  font-size: 1.3rem;
+  margin-bottom: 0.7rem;
+}
+
+.service__card p {
+  color: #444;
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.service__card ul li {
+  color: #333;
+  margin-bottom: 0.35rem;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .services__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

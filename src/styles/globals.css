@@ -1,25 +1,69 @@
-@import "./variables.css";
+/* 🌐 Global Styles */
+:root {
+  --primary: #007bff;
+  --secondary: #0056b3;
+  --light: #f8f9fa;
+  --dark: #121212;
+  --text: #eaeaea;
+  --accent: #00c2ff;
+  --radius: 10px;
+  --shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  --transition: all 0.3s ease;
+}
 
-html {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
   font-family: "Poppins", sans-serif;
-  background-color: var(--color-background);
-  color: var(--color-text);
+  color: var(--text);
+  background-color: var(--dark);
+  line-height: 1.6;
   overflow-x: hidden;
 }
 
-/* Fade-up Animation */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
+h1, h2, h3 {
+  font-weight: 600;
+  color: var(--light);
+}
+
+p {
+  color: #d0d0d0;
+  font-size: 1rem;
+}
+
+section {
+  padding: 80px 0;
+  text-align: center;
+}
+
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  padding: 10px 25px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+button:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+
+img {
+  max-width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }

@@ -1,53 +1,52 @@
 import React from "react";
 import "../styles/portfolio.css";
-import projectImage from "../assets/images/projects/portfolio-v1.png";
-import useReveal from "../hooks/useReveal";
-useReveal();
-
-const projects = [
-  {
-    title: "E-Commerce Platform",
-    description: "Modern e-commerce web app with React, Node.js, and Stripe integration.",
-    img: projectImage,
-    link: "#",
-  },
-  {
-    title: "Portfolio Website",
-    description: "Elegant and responsive personal website built with React & Vite.",
-    img: projectImage,
-    link: "#",
-  },
-  {
-    title: "AI Chatbot Interface",
-    description: "Conversational chatbot interface using OpenAI APIs and Tailwind CSS.",
-    img: projectImage,
-    link: "#",
-  },
-];
+import projectPlaceholder from "../assets/images/projects/portfolio-v1.png";
 
 export default function Portfolio() {
   return (
     <section id="portfolio" className="portfolio">
-      <div className="container">
-        <h2>My Projects</h2>
-        <p className="intro">
-          A selection of projects I’ve built to explore creativity and solve real-world problems.
-        </p>
+      <h2 className="section__title">Portfolio</h2>
+      <p className="section__subtitle">
+        A collection of recent projects showcasing clean design, modern
+        development, and practical IT solutions.
+      </p>
 
-        <div className="portfolio-grid">
-          {projects.map((project, index) => (
-            <div className="portfolio-card" key={index}>
-              <img src={project.img} alt={project.title} loading="lazy" />
-              <div className="portfolio-overlay">
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <a href={project.link} target="_blank" rel="noopener noreferrer" className="btn-secondary">
-                  View Project
-                </a>
-              </div>
+      <div className="portfolio__grid">
+        {/* Project 1 */}
+        <div className="portfolio__item">
+          <div className="portfolio__image-wrapper">
+            <img
+              src={projectPlaceholder}
+              alt="Project Preview"
+              className="portfolio__image"
+            />
+          </div>
+
+          <div className="portfolio__content">
+            <h3>Project Title</h3>
+            <p>
+              A brief description of the project, highlighting technologies,
+              functionality, and the problem it solves.
+            </p>
+
+            <div className="portfolio__tags">
+              <span>React</span>
+              <span>CSS</span>
+              <span>Responsive</span>
             </div>
-          ))}
+
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="portfolio__button"
+            >
+              View Project
+            </a>
+          </div>
         </div>
+
+        {/* Future projects can be added here */}
       </div>
     </section>
   );

@@ -1,79 +1,74 @@
-@import "./variables.css";
+/* ============================
+   HERO SECTION (Penn LPS Style)
+   ============================ */
 
-.hero-section {
-  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
-  color: var(--color-light);
+.hero {
+  width: 100%;
+  min-height: 95vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 160px 20px;
-  position: relative;
-  overflow: hidden;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background: #ffffff;
 }
 
 .hero-content {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  max-width: 1200px;
+  justify-content: space-between;
+  max-width: 1300px;
   width: 100%;
-  text-align: center;
   gap: 4rem;
 }
 
-.hero-text h1 {
-  font-size: clamp(2.4rem, 5vw, 3.6rem);
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+.hero-content .text {
+  flex: 1;
 }
 
-.hero-text h1 span {
-  color: var(--color-accent);
+.hero-content .text h1 {
+  font-size: 3.8rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #111;
 }
 
-.hero-text p {
-  color: var(--color-light-secondary);
-  font-size: 1.2rem;
-  line-height: 1.6;
-  max-width: 680px;
-  margin: 0 auto;
+.hero-content .text p {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  color: #444;
+  max-width: 500px;
 }
 
-.hero-image-wrapper {
-  position: relative;
+/* Profile Image */
+
+.hero-content .image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
-.hero-image-bg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle, rgba(0, 150, 255, 0.45), transparent 70%);
+.hero-content .image img {
+  width: 420px;
+  height: 420px;
   border-radius: 50%;
-  filter: blur(45px);
-  z-index: 1;
-}
-
-.hero-image {
-  width: 270px;
-  height: 270px;
-  border-radius: 50%;
-  border: 5px solid var(--color-accent);
   object-fit: cover;
-  box-shadow: 0 10px 45px rgba(0, 0, 0, 0.45);
-  z-index: 2;
-  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 115, 230, 0.35); /* BLUE GLOW */
+  border: 6px solid rgba(0, 115, 230, 0.1);
 }
 
-/* Larger layout for wide screens */
-@media (min-width: 768px) {
+/* Mobile Layout */
+@media (max-width: 900px) {
   .hero-content {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
-    gap: 8rem;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-content .image img {
+    width: 320px;
+    height: 320px;
+  }
+
+  .hero-content .text h1 {
+    font-size: 2.8rem;
   }
 }

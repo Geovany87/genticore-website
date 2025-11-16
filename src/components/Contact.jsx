@@ -1,65 +1,69 @@
-import React, { useState } from "react";
 import "../styles/contact.css";
-import useReveal from "../hooks/useReveal";
-useReveal();
+import { useState } from "react";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("Message sent successfully!");
-    setFormData({ name: "", email: "", message: "" });
   };
 
   return (
     <section id="contact" className="contact">
       <div className="container">
-        <h2>Contact Me</h2>
-        <p>Have a question or a project in mind? Let’s collaborate!</p>
 
-        <form onSubmit={handleSubmit} className="contact-form">
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            required
-            value={formData.name}
-            onChange={handleChange}
-          />
+        <h2 className="section-title">Contact Me</h2>
+        <p className="section-subtitle">
+          Let's connect — feel free to send me a message anytime.
+        </p>
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            required
-            value={formData.email}
-            onChange={handleChange}
-          />
-
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            rows="5"
-            required
-            value={formData.message}
-            onChange={handleChange}
-          />
-
-          <div className="form-button">
-            <button type="submit" className="btn-primary">
-              Send Message
-            </button>
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="name">Full Name</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Your name"
+              value={form.name}
+              onChange={handleChange}
+              required
+            />
           </div>
+
+          <div className="form-group">
+            <label htmlFor="email">Email Address</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="your@email.com"
+              value={form.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="form-group full-width">
+            <label htmlFor="message">Message</label>
+            <textarea
+              name="message"
+              id="message"
+              placeholder="Write your message here..."
+              value={form.message}
+              onChange={handleChange}
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" className="btn-primary submit-btn">
+            Send Message
+          </button>
         </form>
       </div>
     </section>
